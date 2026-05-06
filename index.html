@@ -8,18 +8,134 @@
 </head>
 <body>
     <!-- Navigation -->
+     <span class="nav-logo">jb</span>
+     <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+     </button>
+     <ul class="nav-links">
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+     </ul>
     <!-- Hero -->
     <header id="hero">
-        <div class="hero-content"></div>
+        <div class="hero-content">
+            <span class="section-label">-- intro</span>
+            <h1>Jeremy Boyd</h1>
+            <p class="role">Frontend Developer &middot; systems integrator</p>
+            <p class="hero-summary">
+                Self-taught developer based in Taylor, Tx.
+                Currently building Habdu, a habit tracker,
+                and CITI-Zen, a civic-coordination tool.
+            </p>
+            <div class="hero-ctas">
+                <a href="#projects" class="button-primary">View projects &rarr;</a>
+                <a href="#contact" class="button-secondary">Get in touch! &rarr;</a>
+            </div>
+        </div>
         <div class="hero-motif">
             <!-- Vesica Piscis SVG will go here -->
+             <p class="motif-quote">
+                "You're only given a little spark of madness.
+                    You mustn't lost it." &mdash; Robin Williams
+             </p>
         </div>
     </header>
     <main>
         <!-- Approach -->
+         <section id="approach">
+            <span class="section-label">&ndash; approach</span>
+            <p>
+                I build from the whole down. Before I write a line of code,
+                I see the architecture &mdash; how each piece connects, where it
+                breathes, and where it breaks. I bring a preventative mindset,
+                adaptive problem-solving, and the discipline to build things
+                right the first time.
+            </p>
+         </section>
         <!-- Projects -->
+        <section id="projects">
+            <span class="section-label">&ndash; projects</span>
+            <div class="project-grid">
+                <article class="project-card">
+                    <H3>Habdu</H3>
+                    <p>
+                        A daily organizer that maps your entire day onto a
+                        single color-coded 24-hour clock &mdash; So you can see where your
+                        time actually goes and find room for yourself! Includes a
+                        daily/weekly time-clock counter, and a streak-based habit
+                        tracker for daily goals.
+                    </p>
+                    <ul class="tech-stack">
+                        <li>JavaScript</li>
+                        <li>HTML/CSS</li>
+                    </ul>
+                    <span class="project-status live">Live &mdash; actively adding features</span>
+                    <div class="project-links">
+                        <a href="https://shadowsnacker.github.io/habdu/" target="_blank" rel="noopener">Live site &rarr;</a>
+                        <a href="https://github.com/shadowsnacker/habdu" target="_blank" rel="noopener">GitHub &rarr;</a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <h3>CITI-Zen</h3>
+                    <p>A civic platform designed to be the ONE-STOP SHOP for
+                        government engagement &mdash; vote, track representative's
+                        votes vs promises, follow public spending,  and communicate
+                        with elected officials! Built to make civic participation as
+                        intuitive as any app you already have.
+                    </p>
+                    <ul class="tech-stack">
+                        <li>JavaScript</li>
+                        <li>HTML/CSS</li>
+                    </ul>
+                    <span class="project-status in-dev">In development</span>
+                </article>
+            </div>
+        </section>
         <!-- Skills -->
+         <section id="skills">
+            <span class="section-label">&ndash; skills</span>
+            <div class="skills-grid">
+                <div class="skills-group">
+                    <h3>Fluent in</h3>
+                    <ul>
+                        <li>JavaScript</li>
+                        <li>HTML/CSS</li>
+                        <li>DOM Manipulation</li>
+                        <li>Git</li>
+                        <li>Resonsive design</li>
+                    </ul>
+                </div>
+                <div class="skills-group">
+                    <h3>Working with</h3>
+                    <ul>
+                        <li>CSS Grid</li>
+                        <li>Flexbox</li>
+                        <li>localStorage</li>
+                        <li>GitHub Pages</li>
+                    </ul>
+                </div>
+                <div class="skills-group">
+                    <h3>How I think</h3>
+                    <ul>
+                        <li>System-first architecture</li>
+                        <li>Cross-discipline problem-solving</li>
+                        <li>Preventative maintainance design</li>
+                    </ul>
+                </div>
+            </div>
+         </section>
         <!-- Contact -->
+        <section id="contact">
+            <span class="section-label">&ndash; contact</span>
+            <div class="contact-grid">
+                <a href="mailto:jeremyboyd0428@gmail.com" class="contact-link">Email</a>
+                <a href="https://discord.com/users/shadowsnacker89" target="_blank" rel="noopener" class="contact-link">Discord</a>
+                <a href="https://github.com/shadowsnacker" target="_blank" rel="noopener" class="contact-link">GitHub</a>
+                <a href="https://www.linkedin.com/in/shadowsnacker" target="_blank" rel="noopener" class="contact-link">LinkedIn</a>
+            </div>
+        </section>
     </main>
     <footer> To Live is To Love - Jeremy Boyd</footer>
     <script src="js/app.js"></script>
