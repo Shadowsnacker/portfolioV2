@@ -29,6 +29,7 @@ navToggle.addEventListener("click", () => {
 });
 
 // Close menu when a link is tapped
+// Even when the link takes us elswhere on page the menu STILL closes
 navLinks.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
         navLinks.classList.remove("open");
