@@ -24,7 +24,7 @@
     --font-mono: 'JetBrains Mono', monospace;
 
     /* Spacing */
-    --section-gap: 8rem;
+    --section-gap: 6rem;
     --content-width: 900px;
     --side-padding: clamp(1.5rem, 5vw, 4rem);
 }
