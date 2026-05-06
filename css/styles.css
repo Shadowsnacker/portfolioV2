@@ -1,4 +1,3 @@
-/* Let us begin */
 /* ============================================
    FOUNDATION — Reset, Variables, Typography
    ============================================ */
@@ -225,4 +224,314 @@ nav.scrolled {
     max-width: 300px;
     margin-top: .5rem;
     line-height: 1.6;
+}
+
+/* ============================================
+   SHARED SECTION LAYOUT
+   ============================================ */
+ 
+/* Every <section> in main gets the same rhythm */
+main section {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--section-gap) var(--side-padding);
+    border-top: 1px solid var(--border-subtle);
+}
+ 
+/* ============================================
+   APPROACH
+   ============================================ */
+ 
+#approach p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+    max-width: 640px;
+}
+ 
+/* ============================================
+   PROJECTS
+   ============================================ */
+ 
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+ 
+.project-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 2rem;
+    transition: border-color 0.3s ease;
+}
+ 
+.project-card:hover {
+    border-color: var(--accent-muted);
+}
+ 
+.project-card h3 {
+    font-family: var(--font-body);
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+}
+ 
+.project-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+}
+ 
+/* Tech stack pills */
+.tech-stack {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+ 
+.tech-stack li {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    border: 1px solid var(--accent-muted);
+    padding: 0.25rem 0.7rem;
+    border-radius: 3px;
+}
+ 
+/* Status badges */
+.project-status {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    margin-bottom: 1.2rem;
+}
+ 
+.project-status.live {
+    color: var(--accent);
+}
+ 
+.project-status.live::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    margin-right: 8px;
+    vertical-align: middle;
+}
+ 
+.project-status.in-dev {
+    color: var(--text-dim);
+}
+ 
+.project-status.in-dev::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--text-dim);
+    margin-right: 8px;
+    vertical-align: middle;
+}
+ 
+/* Project links */
+.project-links {
+    display: flex;
+    gap: 1.5rem;
+}
+ 
+.project-links a {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+ 
+.project-links a:hover {
+    color: var(--accent);
+}
+ 
+/* ============================================
+   SKILLS
+   ============================================ */
+ 
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+ 
+.skills-group h3 {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+ 
+.skills-group li {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+}
+ 
+.skills-group li:last-child {
+    border-bottom: none;
+}
+ 
+/* ============================================
+   CONTACT
+   ============================================ */
+ 
+.contact-grid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+ 
+.contact-link {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    border: 1px solid var(--border-light);
+    padding: 0.75rem 1.8rem;
+    border-radius: 4px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+ 
+.contact-link:hover {
+    color: var(--accent);
+    border-color: var(--accent-muted);
+}
+ 
+/* ============================================
+   FOOTER
+   ============================================ */
+ 
+footer {
+    text-align: center;
+    padding: 3rem var(--side-padding);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    border-top: 1px solid var(--border-subtle);
+}
+
+/* ============================================
+   RESPONSIVE — Mobile first adjustments
+   ============================================ */
+ 
+@media (max-width: 768px) {
+ 
+    /* Hamburger becomes visible */
+    .nav-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 30px;
+        height: 30px;
+        z-index: 200;
+    }
+ 
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+        content: "";
+        display: block;
+        width: 22px;
+        height: 2px;
+        background-color: var(--text-muted);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+ 
+    .hamburger::before {
+        transform: translateY(-7px);
+    }
+ 
+    .hamburger::after {
+        transform: translateY(5px);
+    }
+ 
+    /* Hamburger X animation when open */
+    .nav-toggle.open .hamburger {
+        background-color: transparent;
+    }
+ 
+    .nav-toggle.open .hamburger::before {
+        transform: translateY(0) rotate(45deg);
+        background-color: var(--text-primary);
+    }
+ 
+    .nav-toggle.open .hamburger::after {
+        transform: translateY(-2px) rotate(-45deg);
+        background-color: var(--text-primary);
+    }
+ 
+    /* Nav links become vertical overlay */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 60vw;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        background-color: var(--bg-surface);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 150;
+    }
+ 
+    .nav-links.open {
+        transform: translateX(0);
+    }
+ 
+    .nav-links a {
+        font-size: 1.1rem;
+    }
+ 
+    /* Hero stacks vertically */
+    #hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 8rem;
+    }
+ 
+    .hero-summary {
+        max-width: 100%;
+    }
+ 
+    .hero-ctas {
+        justify-content: center;
+    }
+ 
+    .hero-motif {
+        order: -1;
+        margin-bottom: 2rem;
+    }
+ 
+    /* Projects stack to single column */
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+ 
+    /* Skills stack to single column */
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+ 
+    /* Contact centers */
+    .contact-grid {
+        justify-content: center;
+    }
 }
