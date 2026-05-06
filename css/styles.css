@@ -1,1 +1,228 @@
 /* Let us begin */
+/* ============================================
+   FOUNDATION — Reset, Variables, Typography
+   ============================================ */
+
+/* Google Fonts — two fonts, two jobs */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap');
+
+/* CSS Custom Properties — your design tokens.
+   Change a value HERE and it changes EVERYWHERE. */
+:root {
+    /* Colors */
+    --bg-primary: #0d0e11;
+    --bg-surface: #151619;
+    --text-primary: #e8e6de;
+    --text-muted: rgba(232, 230, 222, 0.55);
+    --text-dim: rgba(232, 230, 222, 0.35);
+    --accent: #00c994;
+    --accent-muted: rgba(0, 201, 148, 0.4);
+    --border-subtle: rgba(232, 230, 222, 0.08);
+    --border-light: rgba(232, 230, 222, 0.15);
+
+    /* Typography */
+    --font-body: 'Outfit', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Spacing */
+    --section-gap: 8rem;
+    --content-width: 900px;
+    --side-padding: clamp(1.5rem, 5vw, 4rem);
+}
+
+/* Reset — kill browser defaults so YOU control spacing */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ============================================
+   UTILITIES — Reusable patterns
+   ============================================ */
+
+/* The monospace section labels: — approach, — projects, etc. */
+.section-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    letter-spacing: 0.12em;
+    margin-bottom: 1.5rem;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem var(--side-padding);
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+nav.scrolled {
+    background-color: rgba(13, 14, 17, 0.92);
+    backdrop-filter: blur(10px);
+}
+
+.nav-logo {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* Hamburger — hidden on desktop, shown on mobile */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+ 
+#hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    padding: 6rem var(--side-padding) 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+ 
+#hero h1 {
+    font-family: var(--font-body);
+    font-size: clamp(2.8rem, 6vw, 4rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 0.4rem;
+}
+ 
+.role {
+    font-family: var(--font-mono);
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    color: var(--accent);
+    letter-spacing: 0.02em;
+    margin-bottom: 1.5rem;
+}
+ 
+.hero-summary {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+}
+ 
+/* CTA Buttons */
+.hero-ctas {
+    display: flex;
+    gap: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}
+ 
+.button-primary {
+    color: var(--accent);
+    border: 1px solid var(--accent-muted);
+    padding: 0.65rem 1.4rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+ 
+.button-primary:hover {
+    background-color: rgba(0, 201, 148, 0.1);
+    border-color: var(--accent);
+}
+ 
+.button-secondary {
+    color: var(--text-muted);
+    border: 1px solid var(--border-light);
+    padding: 0.65rem 1.4rem;
+    border-radius: 4px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+ 
+.button-secondary:hover {
+    color: var(--text-primary);
+    border-color: var(--text-muted);
+}
+ 
+/* Vesica Piscis motif area */
+.hero-motif {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.hero-motif svg {
+    width: clamp(160px, 18vw, 220px);
+    height: auto;
+}
+ 
+.motif-quote {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    text-align: center;
+    max-width: 260px;
+    margin-top: 1.5rem;
+    line-height: 1.6;
+}
