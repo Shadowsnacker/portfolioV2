@@ -12,6 +12,7 @@
     --bg-primary: #0d0e11;
     --bg-surface: #151619;
     --text-primary: #e8e6de;
+    --accent-contact: #612779;
     --text-muted: rgba(232, 230, 222, 0.55);
     --text-dim: rgba(232, 230, 222, 0.35);
     --accent: #00c994;
@@ -198,9 +199,14 @@ nav.scrolled {
     transition: color 0.3s ease, border-color 0.3s ease;
 }
 
-.button-secondary:hover {
-    color: var(--text-primary);
-    border-color: var(--text-muted);
+.button-secondary[href="#contact"] {
+    color: #612779;
+    border-color: rgba(97, 39, 121, 0.4);
+}
+
+.button-secondary[href="#contact"]:hover {
+    color: #7a3399;
+    border-color: #612779;
 }
 
 /* Vesica Piscis motif area */
@@ -409,6 +415,10 @@ main section {
 .contact-link:hover {
     color: var(--accent);
     border-color: var(--accent-muted);
+}
+
+#contact .section-label {
+    color: #612779;
 }
 
 /* ============================================

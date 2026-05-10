@@ -180,7 +180,7 @@ window.addEventListener("scroll", () => {
 
         // Quote follows the center dot layer at same rate
         if (motifQuote) {
-            motifQuote.style.transform = `translateY(${scrollY * 0.2}px)`;
+            motifQuote.style.transform = `translateY(${scrollY * 0.06}px)`;
         }
     }
 });
