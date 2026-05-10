@@ -23,7 +23,6 @@
     <!-- Hero -->
     <header id="hero">
         <div class="hero-content">
-            <span class="section-label">&ndash; intro</span>
             <h1>Jeremy Boyd</h1>
             <p class="role">Frontend Developer &middot; systems integrator</p>
             <p class="hero-summary">
@@ -38,17 +37,39 @@
         </div>
         <div class="hero-motif">
             <!-- The Vesica Piscis SVG -->
-            <svg width="220" height="220" viewBox="0 0 220 220"
+            <svg class="vesica" width="220" height="220" viewBox="0 0 220 220"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 aria-hidden="true">
-                <circle cx="88" cy="110" r="64" stroke="#00c994" stroke-width="0.7" opacity="0.7"/>
-                <circle cx="132" cy="110" r="64" stroke="#00c994" stroke-width="0.7" opacity="0.7"/>
-                <circle cx="110" cy="110" r="64" stroke="#00c994" stroke-width="0.5" opacity="0.2"/>
-                <line x1="110" y1="44" x2="110" y2="176" stroke="#00c994" stroke-width="0.5" opacity="0.15"/>
-                <line x1="42" y1="110" x2="178" y2="110" stroke="#00c994" stroke-width="0.5" opacity="0.15"/>
-                <circle cx="110" cy="110" r="2.5" fill="#00c994" opacity="0.7"/>
-                <circle cx="110" cy="110" r="6" stroke="#00c994" stroke-width="0.4" opacity="0.3"/>
+
+                <!-- Breathing circles — STATIC, no parallax movement -->
+                <circle class="breathe" cx="88" cy="110" r="64" stroke="#00c994" stroke-width="0.7" opacity="0.7"/>
+                <circle class="breathe" cx="132" cy="110" r="64" stroke="#00c994" stroke-width="0.7" opacity="0.7"/>
+
+                <!-- Axis lines + third circle — moves at HALF speed -->
+                <g class="parallax-layer" data-depth="0.05">
+                    <circle cx="110" cy="110" r="64" stroke="#00c994" stroke-width="0.5" opacity="0.2"/>
+                    <line x1="110" y1="44" x2="110" y2="176" stroke="#00c994" stroke-width="0.5" opacity="0.15"/>
+                    <line x1="42" y1="110" x2="178" y2="110" stroke="#00c994" stroke-width="0.5" opacity="0.15"/>
+                </g>
+
+                <!-- Center dot + inner ring — moves MOST -->
+                <g class="parallax-layer" data-depth="0.1">
+                    <circle cx="110" cy="110" r="2.5" fill="#00c994" opacity="0.7"/>
+                    <circle cx="110" cy="110" r="6" stroke="#00c994" stroke-width="0.4" opacity="0.3"/>
+                </g>
+
+                <!-- Ghost circles — rotate on scroll trigger -->
+                <g class="ghost-orbit">
+                    <circle cx="88" cy="110" r="64" stroke="#00c994" stroke-width="0.5" opacity="0"/>
+                    <circle cx="132" cy="110" r="64" stroke="#00c994" stroke-width="0.5" opacity="0"/>
+                </g>
+
+                <!-- Wave ripple — scales outward from vesica shape -->
+                <g class="wave-ripple">
+                    <circle cx="88" cy="110" r="64" stroke="rgba(232,230,222,0.2)" stroke-width="1" opacity="0"/>
+                    <circle cx="132" cy="110" r="64" stroke="rgba(232,230,222,0.2)" stroke-width="1" opacity="0"/>
+                </g>
             </svg>
              <p class="motif-quote">
                 "You're only given a little spark of madness.
